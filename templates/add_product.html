@@ -1,0 +1,150 @@
+
+{% extends 'admin_base.html' %}
+{% block content %}
+{% load static %}
+  <!-- ======= Header ======= -->
+
+  <!-- ======= Sidebar ======= -->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Form Elements</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item active">Elements</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Add a new Customer</h5>
+
+    <form method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+<!--        {{ form.as_p }}-->
+<!--      'product_name', 'product_description', 'product_image1', 'product_image2', 'product_image3',-->
+<!--                  'product_image4', 'product_mrp', 'product_price', 'product_category', 'product_subcategory',-->
+<!--                  'product_arrival_time', 'product_specification_1', 'product_specification_2',-->
+<!--                  'product_stock_available', 'product_rating', 'product_total_sold', 'product_is_trusted',-->
+<!--                  'product_review_id', 'product_status'-->
+
+              <!-- Multi Columns Form -->
+              <form class="row g-3">
+                <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">Name</label>
+                  <div>{{ form.product_name }}</div>
+                </div>
+                <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">description</label>
+                  <div>{{ form.product_description }}</div>
+                </div>
+                <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label" >Image 1</label>
+                  <div>{{ form.product_image1 }}</div>
+                </div>
+                <div class="col-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">Image 2</label>
+                  {{ form.product_image2 }}
+                </div>
+                <div class="col-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label class="form-label">Image 3</label>
+                  {{ form.product_image3 }}
+                </div>
+                <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">Image 4</label>
+                  {{ form.product_image4 }}
+                </div>
+
+                <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">product_price</label>
+                  {{ form.product_price }}
+                </div>
+                <div class="col-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">product_category</label>
+                  {{ form.product_category }}
+                </div>
+                <div class="col-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label class="form-label">product_subcategory</label>
+                  {{ form.product_subcategory }}
+                </div>
+
+                    <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">product_specification_1</label>
+                  {{ form.product_specification_1 }}
+                </div>
+                <div class="col-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">product_specification_2</label>
+                  {{ form.product_specification_2 }}
+                </div>
+                <div class="col-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label class="form-label">product_stock_available</label>
+                  {{ form.product_stock_available }}
+                </div>
+                <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">product_rating</label>
+                  {{ form.product_rating }}
+                </div>
+
+
+                    <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">product_total_sold</label>
+                  {{ form.product_total_sold }}
+                </div>
+                <div class="col-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">product_is_trusted</label>
+                  {{ form.product_is_trusted }}
+                </div>
+                <div class="col-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label class="form-label">product_review_id</label>
+                  {{ form.product_review_id }}
+                </div>
+                <div class="col-md-12" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label  class="form-label">product_arrival_time</label>
+                  {{ form.product_arrival_time }}
+                </div>
+
+
+
+
+                <div class="col-md-4" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label class="form-label">State</label>
+                  <select >
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-md-4" style="display:flex;justify-content:space-between;margin-top:10px;">
+                  <label class="form-label">Zip</label>
+                  <input type="text" >
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" >
+                    <label class="form-check-label" >
+                      Check me out
+                    </label>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form><!-- End Multi Columns Form -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+{%endblock%}

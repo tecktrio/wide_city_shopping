@@ -1,0 +1,152 @@
+
+{% extends 'admin_base.html' %}
+{% block content %}
+{% load static %}
+  <!-- ======= Header ======= -->
+
+  <!-- ======= Sidebar ======= -->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Form Elements</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item active">Elements</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Add a new Customer</h5>
+<!--/////////////////////////////////////////////////////////////////////////-->
+              <!-- General Form Elements -->
+
+
+    <form method="POST" onsubmit="return validate()" >
+    {% csrf_token %}
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+            <label >Your email address </label>
+            <p>{{form.customer_email}}</p>
+        </div>
+
+        <div id="signup_email_err" style="color:red;font-size:10px;"></div>
+
+    </div><!-- End .form-group -->
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_password</label>
+        <p>{{form.customer_password}}</p>
+        </div>
+
+        <div id="customer_password_err" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_phone_number</label>
+        <p>{{form.customer_phone_number}}</p>
+        </div>
+        <div id="customer_phone_number_err" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_building_id</label>
+        <p>{{form.customer_building_id}}</p>
+        </div>
+        <div id="customer_building_id_err" style="color:red;font-size:10px;"></div>
+
+    </div><!-- End .form-group -->
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_landmark</label>
+        <p>{{form.customer_landmark}}</p>
+        </div>
+        <div id="customer_landmark_err" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_city</label>
+            <p>{{form.customer_city}}</p>
+        </div>
+        <div id="customer_city_err" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_country</label>
+        <p>{{form.customer_country}}</p>
+        </div>
+        <div id="customer_country" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_pincode</label>
+        <p>{{form.customer_pincode}}</p>
+        </div>
+        <div id="customer_pincode" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_total_buyed</label>
+        <p>{{form.customer_total_buyed}}</p>
+        </div>
+        <div id="customer_total_buyed" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >customer_status</label>
+        <p>{{form.customer_status}}</p>
+        </div>
+
+        <div id="customer_status" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+    <div style="margin:20px;">
+        <div style="display:flex;justify-content:space-between;">
+        <label >is_admin</label>
+        <p>{{form.is_admin}}</p>
+        </div>
+
+        <div id="is_admin" style="color:red;font-size:10px;"></div>
+    </div><!-- End .form-group signup-->
+
+
+    <div style="margin:20px;">
+        <button type="submit" class="btn btn-outline-primary-2" style="background-color:blue;border:none;border-radius:5px;color:white;padding:5px;">
+            <span>SIGN UP</span>
+            <i class="icon-long-arrow-right"></i>
+        </button>
+
+        <div style="margin:20px;">
+            <input type="checkbox" class="custom-control-input" id="register-policy" >
+            <label class="custom-control-label" for="register-policy">I agree to the <a href="#">privacy policy</a> *</label>
+        </div><!-- End .custom-checkbox -->
+    </div><!-- End .form-footer -->
+    </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+{%endblock%}

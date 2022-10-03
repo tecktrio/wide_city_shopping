@@ -1,0 +1,55 @@
+from django.conf import settings
+from django.conf.urls.static import static
+from django.urls import path
+
+from shopping_app import views
+
+urlpatterns=[
+
+    path('',views.redirect_home),
+    path('home',views.home),
+    path('account',views.account),
+    path('view_cart',views.view_cart),
+    path('add_to_cart/<str:product_id>',views.add_to_cart),
+    path('product_detail/<str:product_id>',views.product_detail),
+    path('update_cart',views.update_cart),
+    path('item_delete/',views.item_delete),
+    path('load_data_in_cart',views.load_data_in_cart),
+    path('checkout',views.checkout),
+    path('add_address',views.add_address),
+    path('category_view/<str:category_id>',views.category_view),
+    path('place_order/<str:address_id>',views.place_order),
+    path('order_request',views.order_request),
+    path('thankyou_for_order',views.thankyou_for_order),
+    # path('product_detail/<str:product_id>',views.product_detail),
+    path('category_products/<str:category_name>',views.category_products),
+    path('admin/add_banner',views.add_banners),
+    path('customer_logout',views.customer_logout),
+    path('admin/delete_banner',views.delete_banner),
+    path('admin/add_company_info',views.add_company_info),
+    path('admin/admin_pannel',views.admin_pannel),
+    path('admin/view_edit_orders',views.view_edit_orders),
+    path('admin/admin_login',views.admin_login),
+    path('verify_otp/<str:current_user_email>',views.verify_otp),
+    path('admin/admin_register',views.admin_register),
+    path('admin/add_customer',views.add_customer),
+    path('admin/edit_customer',views.edit_customer),
+    path('admin/edit_one_customer',views.edit_one_customer),
+    path('admin/delete_customer',views.delete_customer),
+    path('admin/add_product',views.add_products),
+    path('admin/edit_product',views.edit_Product),
+    path('admin/list_subcategory',views.list_subcategory),
+    path('admin/edit_one_product',views.edit_one_product),
+    path('admin/delete_product',views.delete_Product),
+    path('admin/add_category',views.add_categories),
+    path('admin/edit_category',views.edit_categories),
+    path('admin/edit_one_category/<str:category_id>',views.edit_one_categories),
+    path('admin/delete_category',views.delete_categories),
+    path('admin/add_subcategory',views.add_subcategory),
+    path('admin/edit_subcategory',views.edit_subcategory),
+    # path('user_sign_in',views.user_sign_in),
+    path('signin',views.signin),
+    path('user_otp_signin',views.user_otp_signin),
+    path('register',views.register),
+
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
